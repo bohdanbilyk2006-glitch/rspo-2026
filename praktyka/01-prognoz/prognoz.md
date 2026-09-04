@@ -8,7 +8,13 @@ AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 SyntaxError: invalid syntax. Perhaps you forgot a comma?
 >>> print("Логічних ядер:  ", os.cpu_count())
+PS C:\WINDOWS\system32> Get-CimInstance Win32_Processor | Select-Object NumberOfCores, NumberOfLogicalProcessors
+
+NumberOfCores NumberOfLogicalProcessors
+------------- -------------------------
+           16                        32
 Логічних ядер:   32
+
 ## 2.Обрана задача
 Множина Мандельброта.
 ## 3. Послідовна та паралельна частини
