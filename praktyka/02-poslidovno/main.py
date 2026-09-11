@@ -58,12 +58,10 @@ if __name__ == "__main__":
     print("MAX_ITER:", MAX_ITER)
     print("Количество прогонов:", 3)
 
-    print("\nВычисление: три прогона...")
     t_calc, calc_times, base = zamir(poslidovno, 3)
     print("Время вычисления по прогонам:", calc_times)
     print("Минимум вычисления:", t_calc, "с")
 
-    print("\nСохранение: три прогона...")
     t_save, save_times, _ = zamir(zberegty_pgm, 3, base)
     print("Время сохранения по прогонам:", save_times)
     print("Минимум сохранения:", t_save, "с")
@@ -71,7 +69,6 @@ if __name__ == "__main__":
     s = t_save / (t_calc + t_save)
     print("Доля сохранения:", s * 100, "%")
 
-    print("\nПрофилирование: отдельный запуск...")
     prof = cProfile.Profile()
     r = prof.runcall(poslidovno)
 
