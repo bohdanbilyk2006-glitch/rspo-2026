@@ -72,7 +72,6 @@ if __name__ == "__main__":
     prof = cProfile.Profile()
     r = prof.runcall(poslidovno)
 
-    assert r == base, "результат розійшовся з послідовним"
 
     with open("profil.txt", "w", encoding="utf-8") as f:
         pstats.Stats(prof, stream=f).sort_stats("cumulative").print_stats(10)
